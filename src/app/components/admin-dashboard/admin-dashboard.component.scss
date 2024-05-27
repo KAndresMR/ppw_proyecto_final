@@ -1,0 +1,28 @@
+/* admin-dashboard.component.scss */
+.admin-dashboard {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+
+    h2 {
+        margin-bottom: 20px;
+    }
+
+    .book-management {
+        margin-bottom: 30px;
+
+        button {
+            margin-right: 10px;
+        }
+    }
+
+    .user-management {
+        .user {
+            margin-bottom: 15px;
+
+            button {
+                margin-left: 10px;
+            }
+        }
+    }
+}

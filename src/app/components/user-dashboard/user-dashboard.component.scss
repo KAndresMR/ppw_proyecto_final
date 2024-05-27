@@ -1,0 +1,24 @@
+/* user-dashboard.component.scss */
+.user-dashboard {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+
+    h2 {
+        margin-bottom: 20px;
+    }
+
+    .profile-info {
+        margin-bottom: 20px;
+
+        button {
+            margin-left: 10px;
+        }
+    }
+
+    .book-list {
+        .book {
+            margin-bottom: 15px;
+        }
+    }
+}

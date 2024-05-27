@@ -1,0 +1,18 @@
+/* book-details.component.scss */
+.book-details {
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+
+    h2 {
+        margin-bottom: 20px;
+    }
+
+    p {
+        margin-bottom: 10px;
+    }
+
+    button {
+        margin-right: 10px;
+    }
+}
