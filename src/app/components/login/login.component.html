@@ -1,22 +1,18 @@
-<p>login works!</p>
 
-
-<!-- login.component.html -->
 <div class="login-container">
-    <h2>Welcome back!</h2>
-    <form>
-        <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" placeholder="Enter your email">
-        </div>
-        <div class="form-group">
-            <label for="password">Password</label>
-            <input type="password" id="password" name="password" placeholder="Enter your password">
-        </div>
-        <button type="submit">Login</button>
-    </form>
-    <div class="alternative">
-        <p>Or login with</p>
-        <button class="google">Google</button>
+  <form action="#" [formGroup]="form" (ngSubmit)]>
+
+    <label for="login-image" class="login-label">Iniciar Sesión</label>
+    <img src="assets/logo.png" alt="Login Image" class="login-image">
+    <div class="login-form">
+      <input id="correo" type="email" formGroupName = "email" placeholder="Correo Electrónico" required>
+      <input id="contra" type="password" formGroupName = "password" placeholder="Contraseña" required>
+      <button type="submit">Entrar</button>
+      <button>Iniciar sesión con Google</button>
+
     </div>
+
+  </form>
+    
 </div>
+  

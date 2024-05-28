@@ -1,56 +1,58 @@
-/* login.component.scss */
-.login-container {
-    max-width: 400px;
-    margin: auto;
-    padding: 20px;
-    text-align: center;
-
-    form {
-        margin-top: 20px;
-    }
-
-    .form-group {
-        margin-bottom: 15px;
-
-        label {
-            display: block;
-            margin-bottom: 5px;
-        }
-
-        input {
-            width: 100%;
-            padding: 10px;
-            font-size: 16px;
-        }
-    }
-
-    button {
-        display: block;
-        width: 100%;
-        padding: 10px;
-        background-color: #007bff;
-        color: #fff;
-        border: none;
-        cursor: pointer;
-
-        &:hover {
-            background-color: #0056b3;
-        }
-    }
-
-    .alternative {
-        margin-top: 20px;
-
-        p {
-            margin-bottom: 10px;
-        }
-
-        .google {
-            background-color: #db4437;
-
-            &:hover {
-                background-color: #c1351d;
-            }
-        }
-    }
+:host {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #013974;
 }
+
+.login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+}
+
+.login-label{
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #ffffff;
+}
+
+.login-image {
+    margin-bottom: 10px;
+    width: 60%;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login-form input {
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 250px; /* Ajusta este valor según sea necesario */
+
+}
+
+
+.login-form button {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+}
+
+.login-form button:hover {
+    background-color: #0056b3;
+}
+
