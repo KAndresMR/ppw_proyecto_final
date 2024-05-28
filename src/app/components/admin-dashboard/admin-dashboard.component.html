@@ -1,23 +1,13 @@
-<p>admin-dashboard works!</p>
-<!-- admin-dashboard.component.html -->
-<div class="admin-dashboard">
-    <h2>Welcome, Admin!</h2>
-    <div class="book-management">
-        <h3>Book Management</h3>
-        <button (click)="addBook()">Add New Book</button>
-        <div *ngFor="let book of books" class="book">
-            <h4>{{ book.title }}</h4>
-            <p>{{ book.author }}</p>
-            <button (click)="editBook(book.id)">Edit</button>
-            <button (click)="deleteBook(book.id)">Delete</button>
-        </div>
-    </div>
-    <div class="user-management">
-        <h3>User Management</h3>
-        <div *ngFor="let user of users" class="user">
-            <p>{{ user.name }}</p>
-            <p>{{ user.email }}</p>
-            <button (click)="editUser(user.id)">Edit</button>
-        </div>
-    </div>
-</div>
+<div *ngFor="let book of books">
+    <h4>{{ book.title }}</h4>
+    <p>{{ book.author }}</p>
+    <button (click)="editBook(book.id)">Edit</button>
+    <button (click)="deleteBook(book.id)">Delete</button>
+  </div>
+  
+  <div *ngFor="let user of users">
+    <p>{{ user.name }}</p>
+    <p>{{ user.email }}</p>
+    <button (click)="editUser(user.id)">Edit</button>
+  </div>
+  

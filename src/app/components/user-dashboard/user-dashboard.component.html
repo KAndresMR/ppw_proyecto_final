@@ -1,20 +1,13 @@
-<p>user-dashboard works!</p>
-
-<!-- user-dashboard.component.html -->
-<div class="user-dashboard">
-    <h2>Welcome, {{ username }}!</h2>
-    <div class="profile-info">
-        <p>Email: {{ email }}</p>
-        <p>Role: User</p>
-        <button (click)="editProfile()">Edit Profile</button>
-        <button (click)="logout()">Logout</button>
+<div>
+    <h1>Welcome, {{ username }}</h1>
+    <p>Email: {{ email }}</p>
+    <button (click)="editProfile()">Edit Profile</button>
+    <button (click)="logout()">Logout</button>
+  
+    <div *ngFor="let user of users" class="user">
+      <h2>{{ user.name }}</h2>
+      <p>Email: {{ user.email }}</p>
+      <button (click)="viewDetails(user.id)">View Details</button>
     </div>
-    <div class="book-list">
-        <h3>Available Books</h3>
-        <div *ngFor="let book of books" class="book">
-            <h4>{{ book.title }}</h4>
-            <p>{{ book.author }}</p>
-            <button (click)="viewDetails(book.id)">View Details</button>
-        </div>
-    </div>
-</div>
+  </div>
+  
