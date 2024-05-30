@@ -1,45 +1,46 @@
 import { Component, inject} from '@angular/core';
-import { User } from 'firebase/auth';
-import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+import { Router, RouterLink } from '@angular/router';
+import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
 import { AuthService } from '../../services/auth.service';
-import { CommonModule } from '@angular/common';
-import firebase from 'firebase/app';
-
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, FormsModule],
+  imports: [ReactiveFormsModule, RouterLink],//CommonModule, ReactiveFormsModule, FormsModule],
   templateUrl: './login.component.html',
-  styleUrl: './login.component.scss'
+  styleUrl: './login.component.scss',
 })
 export class LoginComponent {
+  fb = inject(FormBuilder);
+  http = inject(HttpClient);
+  authService = inject(AuthService);
+  router = inject(Router);
+  
 
-  firebaseService = inject(AuthService);
+  form = this.fb.nonNullable.group({
+    email: ['', Validators.required],
+    password: ['', Validators.required],
+  });
 
-  constructor() {}
+  errorMessage: string | null = null;
 
-  form = new FormGroup({
-    email:new FormControl('', [Validators.required, Validators.email]),
-    password: new FormControl('',[Validators.required])
-
-  })
-
-  ngOnInit() {
+  onSubmit(): void {
+    const rawForm = 
+    this.form.getRawValue()
+    this.authService
+      .login(rawForm.email, rawForm.password)
+      .subscribe({
+        next: () => {
+      this.router.navigateByUrl('/');
+      },
+      error: (err)=> {
+        this.errorMessage =err.code;
+      
+      },
+    });
+  
 
   }
-
-  async submit() {
-    console.log(this.form.value)
-    return
-    if (this.form.valid) {
-      this.firebaseService.signIn(this.form.value as User)
-        .then(resp => {
-          console.log(' ___ ',resp)
-        })
-    }
-
-  }
-
 
 }

@@ -1,21 +1,25 @@
+@if (errorMessage) {
+  <div>{{errorMessage}}</div>
+}
+
+
 <div class="register-container">
-    <h2>Create an account</h2>
-    <form>
-        <div class="form-group">
-            <label for="name">Name</label>
-            <input type="text" id="name" name="name" placeholder="Enter your name">
-        </div>
-        <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" placeholder="Enter your email">
-        </div>
-        <div class="form-group">
-            <label for="password">Password</label>
-            <input type="password" id="password" name="password" placeholder="Enter your password">
-        </div>
-        <button type="submit">Register</button>
+    <h2>Registro de Usuario</h2>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <div>
+        <input type="text" placeholder="Username" formControlName="username" required>
+      </div>
+      <div>
+        <input type="email" placeholder="Email" formControlName="email" required>
+      </div>
+      <div>
+        <input type="password" placeholder="Password" formControlName="password" required>
+      </div>
+      <div>
+        <button type="submit">Registrarse</button>
+        <button type="button" class="btn-secondary" routerLink="/">Regresar al Menú Principal</button>
+      </div>
+      
     </form>
-    <div class="alternative">
-        <p>Already have an account? <a href="#">Login here</a></p>
-    </div>
-</div>
+  </div>
+  

@@ -1,13 +1,23 @@
-<div *ngFor="let book of books">
-    <h4>{{ book.title }}</h4>
-    <p>{{ book.author }}</p>
-    <button (click)="editBook(book.id)">Edit</button>
-    <button (click)="deleteBook(book.id)">Delete</button>
+<div class="admin-dashboard-container">
+  <h2>Dashboard del Administrador</h2>
+  <div class="admin-stats">
+    <div class="admin-stat">
+      <h3>Total de Libros</h3>
+      <p>100</p>
+    </div>
+    <div class="admin-stat">
+      <h3>Total de Usuarios</h3>
+      <p>50</p>
+    </div>
+    <!-- Puedes agregar más estadísticas si es necesario -->
   </div>
-  
-  <div *ngFor="let user of users">
-    <p>{{ user.name }}</p>
-    <p>{{ user.email }}</p>
-    <button (click)="editUser(user.id)">Edit</button>
+  <div class="admin-actions">
+    <h3>Acciones Disponibles</h3>
+    <ul>
+      <li><a href="#">Agregar Nuevo Libro</a></li>
+      <li><a href="#">Gestionar Libros</a></li>
+      <li><a href="#">Gestionar Usuarios</a></li>
+      <!-- Agrega más acciones disponibles según sea necesario -->
+    </ul>
   </div>
-  
+</div>

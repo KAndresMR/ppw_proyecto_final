@@ -1,9 +1,21 @@
-<!-- book-details.component.html -->
-<div class="book-details">
-    <h2>{{ book.title }}</h2>
-    <p>Author: {{ book.author }}</p>
-    <p>Genre: {{ book.genre }}</p>
-    <p>Description: {{ book.description }}</p>
-    <button (click)="requestLoan(book.id)">Request Loan</button>
-    <button (click)="goBack()">Back to Dashboard</button>
-</div>
+<div class="book-details-container">
+    <h2>Detalles del Libro</h2>
+    <div class="book-info">
+      <h3>Información del Libro</h3>
+      <!-- Aquí puedes mostrar la información detallada del libro -->
+      <p><strong>Título:</strong> Título del libro</p>
+      <p><strong>Autor:</strong> Nombre del autor</p>
+      <p><strong>ISBN:</strong> Número ISBN del libro</p>
+      <!-- Agrega más detalles del libro si es necesario -->
+    </div>
+    <div class="book-actions">
+      <h3>Acciones Disponibles</h3>
+      <!-- Aquí puedes mostrar las acciones disponibles para el libro -->
+      <ul>
+        <li><a href="#">Editar Libro</a></li>
+        <li><a href="#">Eliminar Libro</a></li>
+        <!-- Agrega más acciones disponibles según sea necesario -->
+      </ul>
+    </div>
+  </div>
+  

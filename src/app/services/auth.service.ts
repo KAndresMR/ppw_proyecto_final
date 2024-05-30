@@ -1,31 +1,45 @@
-import { Injectable, inject } from '@angular/core';
-import { AngularFireAuth } from '@angular/fire/compat/auth';
-import { AngularFirestore, AngularFirestoreModule } from '@angular/fire/compat/firestore';
-import { Router } from 'express';
-import { User, getAuth, signInWithEmailAndPassword } from 'firebase/auth';
-import { get } from 'http';
+import { Injectable, inject, signal } from '@angular/core';
+import { Auth, createUserWithEmailAndPassword, user } from '@angular/fire/auth'
+import { signInWithEmailAndPassword, updateProfile } from 'firebase/auth';
+import { emit } from 'process';
+import { Observable, from } from 'rxjs';
+import { UserInterface } from '../components/register/user.interface';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-
-  auth = inject(AngularFireAuth);
-  firestore = inject(AngularFirestore);
-  router = inject(Router);
-
-
-  getAuth() {
-    return getAuth();
-  }
-
-  signIn(user: User) {
-    return signInWithEmailAndPassword(getAuth(), user.email, user.uid);
-  }
-
   
+  firebaseAuth = inject(Auth);  
+  user$ = user(this.firebaseAuth)
+  currentUserSig = signal<UserInterface | null | undefined>(undefined)
+
+  register(
+    email: string, 
+    username: string, 
+    password:string
+    
+  ): Observable<void> {
+    console.log('Correo:',email,'Username',username,'Password:', password, );
+    const promise = createUserWithEmailAndPassword(
+      this.firebaseAuth, 
+      email, 
+      password,
+    ).then(response => updateProfile(response.user, { displayName: username }))
+      return from(promise);
+  }
 
 
+  login(email: string, password: string): Observable<void> {
+    
+    console.log('Correo:',email,'Password:', password, );
 
-  constructor() { }
+    const promise = signInWithEmailAndPassword(
+      this.firebaseAuth, 
+      email, 
+      password,
+    ).then(() => {});
+    return from(promise);
+  }
+
 }

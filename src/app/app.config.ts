@@ -1,14 +1,11 @@
 import { ApplicationConfig, importProvidersFrom } from '@angular/core';
-import { provideRouter, withHashLocation } from '@angular/router';
+import { provideRouter} from '@angular/router';
 
-import { AngularFireModule } from '@angular/fire/compat';
-import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { routes } from './app.routes';
-import { HttpClientModule } from '@angular/common/http';
-import { provideClientHydration } from '@angular/platform-browser';
-
+import {provideHttpClient } from '@angular/common/http';
+import { provideFirebaseApp } from '@angular/fire/app';
 import { initializeApp } from 'firebase/app';
-
+import { getAuth, provideAuth } from '@angular/fire/auth';
 
 
 const firebaseConfig = {
@@ -20,15 +17,18 @@ const firebaseConfig = {
   appId: "1:143031959612:web:4acbf06775874997d20339"
 };
 
-initializeApp(firebaseConfig);
-
 
 export const appConfig: ApplicationConfig = {
-  providers: [provideRouter(routes, withHashLocation()),
-  importProvidersFrom(
-    HttpClientModule,
-    AngularFireModule.initializeApp(firebaseConfig),
-    AngularFirestoreModule
-  )]
+  providers: [
+    provideRouter(routes), 
+    provideHttpClient(),
+
+    provideFirebaseApp(() => initializeApp(firebaseConfig)),
+    provideAuth(()  => getAuth())
+    
+
+
+  ],
+  
 
 };

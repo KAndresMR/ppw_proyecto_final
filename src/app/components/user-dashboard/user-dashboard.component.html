@@ -1,13 +1,19 @@
-<div>
-    <h1>Welcome, {{ username }}</h1>
-    <p>Email: {{ email }}</p>
-    <button (click)="editProfile()">Edit Profile</button>
-    <button (click)="logout()">Logout</button>
-  
-    <div *ngFor="let user of users" class="user">
-      <h2>{{ user.name }}</h2>
-      <p>Email: {{ user.email }}</p>
-      <button (click)="viewDetails(user.id)">View Details</button>
-    </div>
+<div class="user-dashboard-container">
+  <h2>Dashboard de Usuario</h2>
+  <div class="user-info">
+    <h3>Información del Usuario</h3>
+    <!-- Aquí puedes mostrar la información del usuario -->
+    <p><strong>Nombre:</strong> Nombre del usuario</p>
+    <p><strong>Correo Electrónico:</strong> Correo electrónico del usuario</p>
+    <!-- Agrega más detalles del usuario si es necesario -->
   </div>
-  
+  <div class="user-actions">
+    <h3>Acciones Disponibles</h3>
+    <!-- Aquí puedes mostrar las acciones disponibles para el usuario -->
+    <ul>
+      <li><a href="#">Ver Lista de Libros</a></li>
+      <li><a href="#">Editar Perfil</a></li>
+      <!-- Agrega más acciones disponibles según sea necesario -->
+    </ul>
+  </div>
+</div>
