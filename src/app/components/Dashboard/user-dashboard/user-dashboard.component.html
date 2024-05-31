@@ -1,0 +1,21 @@
+<div class="user-dashboard-container">
+  <button class="back-button" (click)="goBack()">Volver</button>
+  <div class="header">
+    <h2>Dashboard del Usuario</h2>
+  </div>
+  <div class="user-profile">
+    <div class="user-info">
+      <img src="/src/assets/user.png" alt="">
+      <div class="user-details">
+        <p class="user-name">{{ username }}</p>
+        <p class="user-email">{{ email }}</p>
+      </div>
+    </div>
+    <div class="user-actions">
+      <button class="edit-profile-btn" routerLink="/user-profile">Editar Perfil</button>
+    </div>
+  </div>
+  <div class="footer">
+    <!-- Contenido del footer, como enlaces de contacto o redes sociales -->
+  </div>
+</div>

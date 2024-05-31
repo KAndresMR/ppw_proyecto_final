@@ -24,19 +24,20 @@ export class AppComponent implements OnInit{
   currentRoute: string;
 
   ngOnInit(): void {
-      this.authService.user$.subscribe(user => {
-        if (user) {
-          this.authService.currentUserSig.set({
-            email:user.email!,
-            username: user.displayName!,
-          });
+    this.authService.user$.subscribe(user => {
+      if (user) {
+        this.authService.currentUserSig.set({
+          uid:user.uid,
+          email:user.email!,
+          username: user.displayName!,
+          isAdmin: user.isAnonymous,
+        });
 
-        }else{
-          this.authService.currentUserSig.set(null);
-        }
-        console.log(this.authService.currentUserSig())
-      });
-  }
+      }else{
+        this.authService.currentUserSig.set(null);
+      }
+    });
+}
 
   
 
@@ -53,7 +54,17 @@ export class AppComponent implements OnInit{
   }
 
   isAuthRoute(): boolean {
-    return this.currentRoute === '/login' || this.currentRoute === '/register';
+    return this.currentRoute === '/login' || 
+    this.currentRoute === '/register' || 
+    this.currentRoute === '/admin-dashboard' ||
+    this.currentRoute === '/user-dashboard' ||
+    this.currentRoute === '/add-book' ||
+    this.currentRoute === '/book-details' ||
+    this.currentRoute === '/book-list' || 
+    this.currentRoute === '/edit-book' ||
+    this.currentRoute === '/user-list' ||
+    this.currentRoute === '/user-profile' 
+    ;
   }
 
   

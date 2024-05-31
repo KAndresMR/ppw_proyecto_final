@@ -1,0 +1,29 @@
+<div class="user-list-container">
+    <div class="user-list-header">
+        <button class="back-button" (click)="goBack()">Volver</button>
+        <h1>Lista de Usuarios</h1>
+    </div>
+
+    <div class="user-list-container">
+        <table class="user-table">
+            <thead>
+                <tr>
+                    <th>Nombre del Usuario</th>
+                    <th>Correo Electrónico</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let user of users">
+                    <td>{{ user.name }}</td>
+                    <td>{{ user.email }}</td>
+                    <td>
+                        <button routerLink="/user-profile">Editar</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+    
+</div>
