@@ -1,1 +1,21 @@
-<p>login works!</p>
+@if (errorMessage) {
+    <div>{{errorMessage}}</div>
+  }
+
+<div class="login-container">
+    <h2>Iniciar Sesión</h2>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div>
+            <input type="email"placeholder="Email" formControlName="email" required>
+        </div>
+        <div>
+            <input type="password" placeholder="Password" formControlName="password" required>
+        </div>
+        <div>
+            <button type="submit">Iniciar Sesión</button>
+            <button type="button" class="btn-secondary" routerLink="/">Regresar al Menú Principal</button>
+        </div>
+        
+    </form>
+    <router-outlet></router-outlet>
+</div>
