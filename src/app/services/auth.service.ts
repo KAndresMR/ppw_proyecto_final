@@ -57,7 +57,6 @@ export class AuthService {
 
   login(email: string, password: string): Observable<void> {
     
-
     const promise = signInWithEmailAndPassword(
       this.firebaseAuth, 
       email, 
