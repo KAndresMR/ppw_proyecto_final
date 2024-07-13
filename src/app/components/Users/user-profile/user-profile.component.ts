@@ -1,5 +1,5 @@
-import { Location } from '@angular/common';
 import { Component, inject } from '@angular/core';
+import { Location } from '@angular/common';
 import { RouterLink, RouterOutlet } from '@angular/router';
 
 

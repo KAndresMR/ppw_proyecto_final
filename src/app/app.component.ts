@@ -4,10 +4,7 @@ import { RouterLink, RouterOutlet } from '@angular/router';
 import { HttpClient, withFetch} from '@angular/common/http';//API Fecth
 import { Router, NavigationEnd } from '@angular/router';
 import { AuthService } from './services/auth.service';
-
-
-
-
+import { user } from '@angular/fire/auth';
 
 @Component({
     selector: 'app-root',
@@ -17,6 +14,7 @@ import { AuthService } from './services/auth.service';
     styleUrl: './app.component.scss'
     
 })
+
 export class AppComponent implements OnInit{
   title = 'aproyectoppw';
   authService = inject(AuthService)
@@ -38,8 +36,6 @@ export class AppComponent implements OnInit{
       }
     });
 }
-
-  
 
   logout(): void {
     console.log('logout');
