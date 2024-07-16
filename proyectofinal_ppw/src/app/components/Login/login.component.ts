@@ -31,27 +31,28 @@ export class LoginComponent {
   onSubmit(): void {
     // Extraemos los valores del formulario
     const { email, password } = this.form.value;
-
-    // Iniciamos sesión en Firebase
-    this.authService.login(email, password).subscribe({
-      next: () => {
-        // Verificamos si el usuario es administrador
-        this.authService.getUserData().subscribe((userData) => {
-          
-          if (userData && userData.isAdmin) {
-            // Si es administrador, redireccionamos al panel de administrador
-            this.router.navigateByUrl('/admin-dashboard');
-          } else {
-            // Si no es administrador, redireccionamos al panel de usuario normal
-            this.router.navigateByUrl('/user-dashboard');
-          }
-        });
-      },
-      error: (err) => {
-        // Manejamos errores de inicio de sesión
-        this.errorMessage = err.message; // Mostramos el mensaje de error
-      },
-    });
+    if (email && password) {
+      // Iniciamos sesión en Firebase
+      this.authService.login(email, password).subscribe({
+        next: () => {
+          // Verificamos si el usuario es administrador
+          this.authService.getUserData().subscribe((userData) => {
+            
+            if (userData && userData.isAdmin) {
+              // Si es administrador, redireccionamos al panel de administrador
+              this.router.navigateByUrl('/admin-dashboard');
+            } else {
+              // Si no es administrador, redireccionamos al panel de usuario normal
+              this.router.navigateByUrl('/user-dashboard');
+            }
+          });
+        },
+        error: (err) => {
+          // Manejamos errores de inicio de sesión
+          this.errorMessage = err.message; // Mostramos el mensaje de error
+        },
+      });
+    }
   }
 
 

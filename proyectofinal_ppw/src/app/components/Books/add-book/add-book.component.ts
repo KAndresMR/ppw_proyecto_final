@@ -14,15 +14,12 @@ import { BookInterface } from '../../Books/book.interface';
   styleUrl: './add-book.component.scss'
 })
 export class AddBookComponent {
-location = inject(Location)
 
-
+  location = inject(Location)
   fb = inject(FormBuilder);
   http = inject(HttpClient);
   bauthService = inject(BauthService)
   router = inject(Router);
-
-
 
   form = this.fb.nonNullable.group({
     title: ['', Validators.required],
@@ -32,20 +29,18 @@ location = inject(Location)
   });
 
   saveBook(): void {
+
     if(this.form.valid){
 
     }
     console.log(this.form.value)    
     const bookData: BookInterface = {
-      title: this.form.get('title').value,
-      author: this.form.get('author').value,
-      publicationYear: this.form.get('publicationYear').value,
-      genre: this.form.get('genre').value
-      
-      // Mapea los campos de tu formulario a la estructura de datos del libro
+      title: this.form.get('title')!.value,
+      author: this.form.get('author')!.value,
+      publicationYear: this.form.get('publicationYear')!.value,
+      genre: this.form.get('genre')!.value
     };
-      console.log('Datos del bookdata',bookData);
-
+    console.log('Datos del bookdata',bookData);
     this.bauthService.addBook(bookData).subscribe(
       () => {
         // Manejar el éxito, por ejemplo, mostrar un mensaje de éxito o redireccionar a otra página
@@ -59,8 +54,6 @@ location = inject(Location)
   }
 
   cancel() {
-    // Redirigir al listado de libros sin guardar
     this.location.back();
   }
-
 }

@@ -3,13 +3,13 @@ import { CommonModule, Location } from '@angular/common';
 import { RouterLink, RouterOutlet } from '@angular/router';
 
 @Component({
-  selector: 'app-users-list',
+  selector: 'app-user-list',
   standalone: true,
   imports: [CommonModule,RouterLink, RouterOutlet],
-  templateUrl: './users-list.component.html',
-  styleUrl: './users-list.component.scss'
+  templateUrl: './user-list.component.html',
+  styleUrl: './user-list.component.scss'
 })
-export class UsersListComponent {
+export class UserListComponent {
 
   location = inject(Location)
   users = [

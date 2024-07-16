@@ -4,7 +4,7 @@ import { RouterLink, RouterOutlet } from '@angular/router';
 import { HttpClient, withFetch} from '@angular/common/http';//API Fecth
 import { Router, NavigationEnd } from '@angular/router';
 import { AuthService } from './services/auth.service';
-
+import { User } from '@angular/fire/auth';  
 
 @Component({
   selector: 'app-root',
@@ -15,13 +15,12 @@ import { AuthService } from './services/auth.service';
 })
 export class AppComponent implements OnInit{
   title = 'proyectofinal_ppw';
-
   authService = inject(AuthService)
 
-  currentRoute: string;
+  currentRoute: string='';//Cambio currentRoute: string;
 
   ngOnInit(): void {
-    this.authService.user$.subscribe(user => {
+    this.authService.user$.subscribe((user: User | null) => {//cambio this.authService.user$.subscribe(user => {
       if (user) {
         this.authService.currentUserSig.set({
           uid:user.uid,
@@ -35,8 +34,6 @@ export class AppComponent implements OnInit{
       }
     });
 }
-
-  
 
   logout(): void {
     console.log('logout');

@@ -16,7 +16,7 @@ export class BauthService {
   currentUserSig = signal<BookInterface | null | undefined>(undefined)
 
 
-  private apiUrl = '';
+  private apiUrl = 'https://firestore.googleapis.com/v1/projects/proyectoppw/databases/(default)/documents/books';
 
   constructor(private http: HttpClient) {}
 

@@ -15,7 +15,7 @@ import { UserDashboardComponent } from './components/Dashboard/user-dashboard/us
 import { AdminDashboardComponent } from './components/Dashboard/admin-dashboard/admin-dashboard.component';
 
 //Users
-import { UsersListComponent } from './components/Users/users-list/users-list.component';
+import { UserListComponent } from './components/Users/user-list/user-list.component';
 import { UserProfileComponent } from './components/Users/user-profile/user-profile.component';
 
 
@@ -33,7 +33,7 @@ export const routes: Routes = [
     { path: 'user-dashboard', component: UserDashboardComponent },
     { path: 'admin-dashboard', component: AdminDashboardComponent },
   
-    { path: 'user-list', component: UsersListComponent },
+    { path: 'user-list', component: UserListComponent },
     { path: 'user-profile', component: UserProfileComponent },
 
 ];

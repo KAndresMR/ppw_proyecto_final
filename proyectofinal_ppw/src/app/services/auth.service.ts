@@ -1,10 +1,11 @@
 import { Injectable, inject, signal} from '@angular/core';
-import { Auth, createUserWithEmailAndPassword, user } from '@angular/fire/auth'
+import { Auth, createUserWithEmailAndPassword, user, User} from '@angular/fire/auth'
 import { getFirestore, doc, setDoc, getDoc } from 'firebase/firestore';
 import { signInWithEmailAndPassword, updateProfile } from 'firebase/auth';
 import { Observable, from, of} from 'rxjs';
 import { switchMap } from 'rxjs/operators';
 import { UserInterface } from '../components/Register/user.interface';
+
 
 @Injectable({
   providedIn: 'root'
@@ -58,7 +59,6 @@ export class AuthService {
 
   login(email: string, password: string): Observable<void> {
     
-
     const promise = signInWithEmailAndPassword(
       this.firebaseAuth, 
       email, 
@@ -79,7 +79,7 @@ export class AuthService {
 
   getUserData(): Observable<UserInterface | null> {
     return this.user$.pipe(
-      switchMap((userAuth) => {
+      switchMap((userAuth: User | null) => {
         // Verificamos si hay un usuario autenticado
         if (userAuth) {
           const db = getFirestore();
