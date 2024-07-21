@@ -1,48 +1,47 @@
 .edit-book-container {
-    width: 400px;
-    margin: auto;
-    padding: 30px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    background-color: #f9f9f9;
-    
-    h2 {
-      text-align: center;
-      margin-bottom: 20px;
-      color: #333333;
+  width: 400px; /* Ancho del contenedor */
+  margin: auto; /* Centrar el contenedor */
+  padding: 30px; /* Espaciado interno del contenedor */
+  border: 1px solid #ccc; /* Borde gris claro */
+  border-radius: 8px; /* Bordes redondeados */
+  background-color: #f9f9f9; /* Color de fondo */
+
+  h2 {
+    text-align: center; /* Centrar el título */
+    margin-bottom: 20px; /* Espaciado inferior del título */
+    color: #333333; /* Color del texto */
+  }
+
+  .form-group {
+    margin-bottom: 20px; /* Espaciado inferior de los grupos de formulario */
+
+    label {
+      display: block; /* Mostrar la etiqueta en un bloque */
+      font-size: 14px; /* Tamaño de fuente de la etiqueta */
+      margin-bottom: 5px; /* Espaciado inferior de la etiqueta */
+      color: #333333; /* Color del texto de la etiqueta */
     }
-    
-    .form-group {
-      margin-bottom: 20px;
-      
-      label {
-        display: block;
-        font-size: 14px;
-        margin-bottom: 5px;
-        color: #333333;
-      }
-      
-      input[type="text"] {
-        width: 100%;
-        padding: 10px;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-      }
-    }
-    
-    button {
-      width: 100%;
-      padding: 10px;
-      background-color: #007bff;
-      color: #ffffff;
-      border: none;
-      border-radius: 4px;
-      font-size: 16px;
-      cursor: pointer;
-      
-      &:hover {
-        background-color: #0056b3;
-      }
+
+    input[type="text"] {
+      width: 100%; /* Ancho completo del campo de entrada */
+      padding: 10px; /* Espaciado interno del campo de entrada */
+      border: 1px solid #ccc; /* Borde gris claro */
+      border-radius: 4px; /* Bordes redondeados */
     }
   }
-  
+
+  button {
+    width: 100%; /* Ancho completo del botón */
+    padding: 10px; /* Espaciado interno del botón */
+    background-color: #007bff; /* Color de fondo del botón */
+    color: #ffffff; /* Color del texto del botón */
+    border: none; /* Sin borde */
+    border-radius: 4px; /* Bordes redondeados */
+    font-size: 16px; /* Tamaño de fuente del botón */
+    cursor: pointer; /* Cursor de puntero en hover */
+    
+    &:hover {
+      background-color: #0056b3; /* Color de fondo en hover */
+    }
+  }
+}

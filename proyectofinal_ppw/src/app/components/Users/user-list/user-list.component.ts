@@ -1,6 +1,10 @@
-import { Component, inject} from '@angular/core';
+import { Component, inject, OnInit} from '@angular/core';
 import { CommonModule, Location } from '@angular/common';
-import { RouterLink, RouterOutlet } from '@angular/router';
+import { Router, RouterLink, RouterOutlet } from '@angular/router';
+import { UserInterface } from '../../Register/user.interface';
+import { AuthService } from '../../../services/auth.service';
+
+
 
 @Component({
   selector: 'app-user-list',
@@ -12,16 +16,32 @@ import { RouterLink, RouterOutlet } from '@angular/router';
 export class UserListComponent {
 
   location = inject(Location)
-  users = [
-    { name: 'Usuario 1', email: 'usuario1@example.com' },
-    { name: 'Usuario 2', email: 'usuario2@example.com' },
-    { name: 'Usuario 3', email: 'usuario3@example.com' },
-    // Puedes agregar más usuarios aquí
-  ];
+  aauthService = inject(AuthService); // Servicio para manejar libros
+  users: UserInterface[] = []; // Array para almacenar la lista de libros
+  errorMessage: string | null = null; // Mensaje de error
 
-  editUser(user: any) {
-    console.log('Editar usuario', user);
-    // Aquí puedes agregar la lógica para editar el usuario
+
+  constructor(private router: Router) {}
+
+
+  editUser(user: UserInterface) {
+    this.router.navigate(['/user-profile'], { state: { user } }); // Navega al componente de edición pasando el libro
+    
+  }
+  // Función para cargar los usuarios desde el servicio
+  loadUsers() {
+    this.aauthService.getUsers().subscribe(
+      (users) => {
+        this.users = users; // Almacena los usuarios en la variable
+      },
+      (error) => {
+        this.errorMessage = 'Error fetching users. Please try again later.'; // Muestra mensaje de error
+      }
+    );
+  }
+
+  ngOnInit() {
+    this.loadUsers(); // Carga los usuarios al inicializar el componente
   }
 
 

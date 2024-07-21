@@ -15,15 +15,13 @@
             </thead>
             <tbody>
                 <tr *ngFor="let user of users">
-                    <td>{{ user.name }}</td>
+                    <td>{{ user.username }}</td>
                     <td>{{ user.email }}</td>
                     <td>
-                        <button routerLink="/user-profile">Editar</button>
+                        <button routerLink="/user-profile" class = "action-button" (click)="editUser(user)">Editar</button>
                     </td>
                 </tr>
             </tbody>
         </table>
-
     </div>
-    
 </div>

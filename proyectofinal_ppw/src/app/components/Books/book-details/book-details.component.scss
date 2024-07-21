@@ -1,59 +1,59 @@
 .book-details-container {
-    width: 800px;
-    margin: auto;
-    padding: 30px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    background-color: #f9f9f9;
+    width: 800px; /* Ancho fijo del contenedor */
+    margin: auto; /* Centramos el contenedor horizontalmente */
+    padding: 30px; /* Espaciado interno */
+    border: 1px solid #ccc; /* Borde gris claro */
+    border-radius: 8px; /* Bordes redondeados */
+    background-color: #f9f9f9; /* Color de fondo claro */
 
     h2 {
-        text-align: center;
-        margin-bottom: 20px;
-        color: #333333;
+        text-align: center; /* Texto centrado */
+        margin-bottom: 20px; /* Espaciado inferior */
+        color: #333333; /* Color del texto */
     }
 
     .book-info {
-        background-color: #ffffff;
-        padding: 20px;
-        border-radius: 8px;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        background-color: #ffffff; /* Fondo blanco */
+        padding: 20px; /* Espaciado interno */
+        border-radius: 8px; /* Bordes redondeados */
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra sutil */
 
         h3 {
-            color: #333333;
-            margin-bottom: 15px;
+            color: #333333; /* Color del texto */
+            margin-bottom: 15px; /* Espaciado inferior */
         }
 
         p {
-            margin-bottom: 10px;
+            margin-bottom: 10px; /* Espaciado inferior de los párrafos */
         }
     }
 
     .book-actions {
-        background-color: #ffffff;
-        padding: 20px;
-        margin-top: 20px;
-        border-radius: 8px;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        background-color: #ffffff; /* Fondo blanco */
+        padding: 20px; /* Espaciado interno */
+        margin-top: 20px; /* Espaciado superior */
+        border-radius: 8px; /* Bordes redondeados */
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra sutil */
 
         h3 {
-            color: #333333;
-            margin-bottom: 15px;
+            color: #333333; /* Color del texto */
+            margin-bottom: 15px; /* Espaciado inferior */
         }
 
         ul {
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
+            list-style-type: none; /* Sin viñetas */
+            padding: 0; /* Sin espaciado interno */
+            margin: 0; /* Sin espaciado externo */
 
             li {
-                margin-bottom: 10px;
+                margin-bottom: 10px; /* Espaciado inferior de los elementos de lista */
 
                 a {
-                    color: #007bff;
-                    text-decoration: none;
+                    color: #007bff; /* Color del enlace */
+                    text-decoration: none; /* Sin subrayado */
 
                     &:hover {
-                        text-decoration: underline;
+                        text-decoration: underline; /* Subrayado en hover */
                     }
                 }
             }

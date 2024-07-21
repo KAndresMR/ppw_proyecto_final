@@ -1,41 +1,72 @@
 .book-list-container {
-    margin-bottom: 20px;
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.books-list-header {
+    background-color: #013974;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    border-radius: 10px 10px 0 0;
+    position: relative;
+}
+
+.back-button {
+    position: absolute; /* Establecer posición absoluta */
+    top: 0; /* Alinear con la parte superior */
+    left: 0; /* Alinear con la parte izquierda */
+    background-color: #013974;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+
+    &:hover {
+        background-color: #012759;
+    }
+}
 
     h2 {
-        font-size: 24px;
-        margin-bottom: 10px;
+        font-size: 24px; /* Tamaño de fuente del título */
+        margin-bottom: 10px; /* Espaciado inferior del título */
     }
 
     table {
-        width: 100%;
-        border-collapse: collapse;
+        width: 100%; /* Ancho completo de la tabla */
+        border-collapse: collapse; /* Colapsar bordes de la tabla */
+        margin-top: 20px;
 
         th,
         td {
-            border: 1px solid #ccc;
-            padding: 8px;
-            text-align: left;
+            border: 1px solid #ccc; /* Borde gris claro */
+            padding: 8px; /* Espaciado interno de celdas */
+            text-align: left; /* Alineación del texto */
         }
 
         th {
-            background-color: #f0f0f0;
-            font-weight: bold;
+            background-color: #f0f0f0; /* Fondo gris claro para encabezados */
+            font-weight: bold; /* Negrita en los encabezados */
         }
 
         td {
             button {
-                padding: 5px 10px;
-                background-color: #013974;
-                color: white;
-                border: none;
-                border-radius: 5px;
-                cursor: pointer;
-                transition: background-color 0.3s;
+                padding: 5px 10px; /* Espaciado interno de botones */
+                background-color: #013974; /* Color de fondo de botones */
+                color: white; /* Color del texto en botones */
+                border: none; /* Sin borde en los botones */
+                border-radius: 5px; /* Bordes redondeados */
+                cursor: pointer; /* Cursor de puntero en hover */
+                transition: background-color 0.3s; /* Transición de color de fondo */
 
                 &:hover {
-                    background-color: #012759;
+                    background-color: #012759; /* Color de fondo en hover */
                 }
             }
         }
     }
-}

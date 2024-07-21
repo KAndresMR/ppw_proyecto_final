@@ -1,25 +1,22 @@
 @if (errorMessage) {
-    <div>{{errorMessage}}</div>
-  }
-  
-  
-  <div class="register-container">
-      <h2>Registro de Usuario</h2>
-      <form [formGroup]="form" (ngSubmit)="onSubmit()">
+<div>{{errorMessage}}</div>
+}
+
+<div class="register-container">
+    <h2>Registro de Usuario</h2>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
         <div>
-          <input type="text" placeholder="Username" formControlName="username" required>
+            <input type="text" placeholder="Username" formControlName="username" required>
         </div>
         <div>
-          <input type="email" placeholder="Email" formControlName="email" required>
+            <input type="email" placeholder="Email" formControlName="email" required>
         </div>
         <div>
-          <input type="password" placeholder="Password" formControlName="password" required>
+            <input type="password" placeholder="Password" formControlName="password" required>
         </div>
         <div>
-          <button type="submit">Registrarse</button>
-          <button type="button" class="btn-secondary" routerLink="/">Regresar al Menú Principal</button>
+            <button type="submit">Registrarse</button>
+            <button type="button" class="btn-secondary" routerLink="/">Regresar al Menú Principal</button>
         </div>
-        
-      </form>
-    </div>
-    
+    </form>
+</div>

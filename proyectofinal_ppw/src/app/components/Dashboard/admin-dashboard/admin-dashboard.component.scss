@@ -1,102 +1,102 @@
 /* Estilos para el encabezado */
 .admin-dashboard-header {
-    background-color: #013974;
-    color: white;
-    text-align: center;
-    padding: 20px 0;
-  }
-  
-  .back-button {
-    position: absolute; /* Establecer posición absoluta */
-    top: 10px; /* Alinear con la parte superior */
-    left: 10px; /* Alinear con la parte izquierda */
-    background-color: #013974;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-  
-    &:hover {
+  background-color: #013974;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+  position: relative; /* Para que el botón de volver esté posicionado correctamente */
+}
+
+.back-button {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: #013974;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+
+  &:hover {
       background-color: #012759;
-    }
   }
-  
-  h2 {
-    margin: 0;
-    font-size: 24px;
-  }
-  
-  /* Estilos para el cuerpo */
-  .admin-dashboard-container {
-    margin: 20px;
-  }
-  
-  .admin-stats {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px;
-  }
-  
-  .admin-stat {
-    width: 45%;
-    padding: 10px;
-    background-color: #f0f0f0;
-    border-radius: 5px;
-    text-align: center;
-  }
-  
-  .admin-actions ul {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .admin-actions li {
-    margin-bottom: 10px;
-  }
-  
-  .action-button {
-    background-color: #013974;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  .action-button:hover {
-    background-color: #012055;
-  }
-  
-  /* Estilos para la lista de libros */
-  .book-list-container {
-    margin-top: 20px;
-  }
-  
-  .book-list {
-    width: 100%;
-    border-collapse: collapse;
-  }
-  
-  .book-list th, .book-list td {
-    border: 1px solid #ccc;
-    padding: 8px;
-    text-align: center;
-  }
-  
-  .book-list th {
-    background-color: #f2f2f2;
-  }
-  
-  /* Estilos para el pie de página */
-  .admin-dashboard-footer {
-    background-color: #013974;
-    color: white;
-    text-align: center;
-    padding: 20px 0;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-  }
-  
+}
+
+h1 {
+  margin: 0;
+  font-size: 24px;
+}
+
+/* Estilos para el cuerpo */
+.admin-dashboard-container {
+  margin: 20px;
+}
+
+.admin-stats {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.admin-stat {
+  width: 45%;
+  padding: 10px;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.admin-actions ul {
+  list-style: none;
+  padding: 0;
+}
+
+.admin-actions li {
+  margin-bottom: 10px;
+}
+
+.action-button {
+  background-color: #013974;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.action-button:hover {
+  background-color: #012055;
+}
+
+/* Estilos para la lista de libros */
+.book-list-container {
+  margin-top: 20px;
+}
+
+.book-list {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.book-list th, .book-list td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: center;
+}
+
+.book-list th {
+  background-color: #f2f2f2;
+}
+
+/* Estilos para el pie de página */
+.admin-dashboard-footer {
+  background-color: #013974;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}

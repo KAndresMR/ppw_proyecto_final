@@ -1,47 +1,65 @@
+/* Estilos para el contenedor del formulario de registro */
 .register-container {
-    width: 400px;
-    margin: auto;
-    padding: 30px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    background-color: #ffffff;
-  }
-  
-  h2 {
-    text-align: center;
-    margin-bottom: 20px;
-    color: #333333;
-  }
-  
-  .form-group {
-    margin-bottom: 20px;
-  }
-  
-  label {
-    display: block;
-    font-size: 14px;
-    margin-bottom: 5px;
-    color: #333333;
-  }
-  
-  input[type="text"],
-  input[type="email"],
-  input[type="password"],
-  button {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-  
-  button {
-    background-color: #28a745;
-    color: #ffffff;
-    font-size: 16px;
-    cursor: pointer;
-  }
-  
-  button:hover {
-    background-color: #218838;
-  }
-  
+  width: 400px;
+  margin: auto;
+  padding: 30px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #ffffff;
+}
+
+/* Estilos para el título del formulario */
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333333;
+}
+
+/* Estilos para el grupo de campos del formulario */
+.form-group {
+  margin-bottom: 20px;
+}
+
+/* Estilos para las etiquetas de los campos */
+label {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 5px;
+  color: #333333;
+}
+
+/* Estilos para los campos de entrada y botones */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+button {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Estilos para el botón de registro */
+button {
+  background-color: #28a745;
+  color: #ffffff;
+  font-size: 16px;
+  cursor: pointer;
+  border: none; /* Asegura que no haya borde adicional en los botones */
+  transition: background-color 0.3s; /* Añade una transición suave para el color de fondo */
+}
+
+/* Estilos para el botón de registro al pasar el ratón por encima */
+button:hover {
+  background-color: #218838;
+}
+
+/* Estilos para el botón secundario */
+.btn-secondary {
+  background-color: #6c757d;
+  color: #ffffff;
+}
+
+.btn-secondary:hover {
+  background-color: #5a6268;
+}

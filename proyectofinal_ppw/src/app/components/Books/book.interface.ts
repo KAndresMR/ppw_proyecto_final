@@ -1,4 +1,5 @@
 export interface BookInterface {
+    uid: string;
     title: string;
     author: string;
     genre: string;

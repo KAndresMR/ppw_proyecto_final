@@ -1,22 +1,28 @@
 <div class="book-list-container">
-    <h2>Lista de Libros</h2>
-    <table>
-        <thead>
-            <tr>
-                <th>Título</th>
-                <th>Autor</th>
-                <th>Acciones</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let book of books">
-                <td>{{ book.title }}</td>
-                <td>{{ book.author }}</td>
-                <td>
-                    <button (click)="editBook(book.id)">Editar</button>
-                    <button (click)="deleteBook(book.id)">Eliminar</button>
-                </td>
-            </tr>
-        </tbody>
-    </table>
+    <div class="books-list-header">
+        <button class="back-button" (click)="goBack()">Volver</button>
+        <h1>Lista de Libros</h1>
+    </div>
+
+    <div class="book-list-container">
+        <table class="book-list">
+            <thead>
+                <tr>
+                    <th>Título</th>
+                    <th>Autor</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let book of books">
+                    <td>{{ book.title }}</td>
+                    <td>{{ book.author }}</td>
+                    <td>
+                        <button routerLink="/edit-book" class="action-button" (click)="editBook(book)">Editar</button>
+                        <button class="action-button" (click)="deleteBook(book.author)">Eliminar</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </div>

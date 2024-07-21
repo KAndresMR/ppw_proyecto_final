@@ -1,40 +1,47 @@
-import { Component, inject} from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { RouterLink, RouterOutlet } from '@angular/router';
 import { CommonModule, Location } from '@angular/common';
+import { BauthService } from '../../../servicesBook/bauth.service';
+import { BookInterface } from '../../Books/book.interface';
+import { UserInterface } from '../../Register//user.interface';
+import { AuthService } from '../../../services/auth.service';
 
 @Component({
   selector: 'app-admin-dashboard',
   standalone: true,
   imports: [CommonModule, RouterLink, RouterOutlet],
   templateUrl: './admin-dashboard.component.html',
-  styleUrl: './admin-dashboard.component.scss'
+  styleUrls: ['./admin-dashboard.component.scss']
 })
-export class AdminDashboardComponent {
-  location = inject(Location)
+export class AdminDashboardComponent implements OnInit {
+  location = inject(Location);
+  bauthService = inject(BauthService);
+  authService = inject(AuthService);
+  books: BookInterface[] = [];
+  users: UserInterface[] = [];
+  errorMessage: string | null = null;
 
-  books = [
-    { id: 1, title: 'Book One', author: 'Author One' },
-    { id: 2, title: 'Book Two', author: 'Author Two' }
-  ];
+  ngOnInit() {
+    this.bauthService.getBooks().subscribe(
+      (books) => {
+        this.books = books;
+        
+      },
+      (error) => {
+        this.errorMessage = 'Error fetching books. Please try again later.';
+      }
+    );
 
-  users = [
-    { id: 1, name: 'User One', email: 'userone@example.com' },
-    { id: 2, name: 'User Two', email: 'usertwo@example.com' }
-  ];
-
-
-
-  editBook(bookId: number) {
-    console.log(`Edit book with ID ${bookId}`);
+    this.authService.getUsers().subscribe(
+      (users) => {
+        this.users = users;
+      },
+      (error) => {
+        this.errorMessage = 'Error fetching users. Please try again later.';
+      }
+    );
   }
 
-  deleteBook(bookId: number) {
-    console.log(`Delete book with ID ${bookId}`);
-  }
-
-  editUser(userId: number) {
-    console.log(`Edit user with ID ${userId}`);
-  }
 
   goBack() {
     this.location.back();
